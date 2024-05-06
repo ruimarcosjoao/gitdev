@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import { Text, TextInput, TextInputProps, View, ViewProps } from "react-native";
 import colors from "tailwindcss/colors";
 
-function Input({
+function TextArea({
   children,
   className,
   label,
@@ -13,7 +13,7 @@ function Input({
       {label && <Text className="font-normal  text-zinc-200">{label}</Text>}
       <View
         className={cn(
-          "w-full h-14 rounded-md border flex-row p-3 gap-3 border-gray-400 items-center ",
+          "w-full h-auto rounded-md border flex-row p-3 gap-3 border-gray-400 items-center ",
           className
         )}
       >
@@ -26,13 +26,18 @@ function Input({
 function Field({ className, ...rest }: TextInputProps) {
   return (
     <TextInput
-      className={cn("flex-1 text-base font-regular text-white", className)}
+      multiline
+      numberOfLines={4}
+      className={cn(
+        "flex-1 text-base font-regular text-white items-start",
+        className
+      )}
       placeholderTextColor={colors.gray[400]}
       {...rest}
     />
   );
 }
 
-Input.Field = Field;
+TextArea.Field = Field;
 
-export { Input };
+export { TextArea };

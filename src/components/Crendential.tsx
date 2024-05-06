@@ -1,9 +1,13 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { Image, ImageBackground, Text, View } from "react-native";
 
-export function Crendential() {
+export const Crendential = forwardRef<View>(({ ...rest }, ref) => {
   return (
-    <View className="bg-black/20 self-stretch items-center pb-6 border border-white/10  rounded-2xl overflow-hidden">
+    <View
+      {...rest}
+      ref={ref}
+      className="bg-black/20 self-stretch items-center pb-6 border border-white/10  rounded-2xl overflow-hidden"
+    >
       <ImageBackground
         source={require("@/assets/image/fundos/fundo_1.png")}
         className="h-40 items-center self-stretch border-b border-white/10 overflow-hidden"
@@ -34,4 +38,4 @@ export function Crendential() {
       />
     </View>
   );
-}
+});

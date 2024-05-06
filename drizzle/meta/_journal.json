@@ -1,0 +1,13 @@
+{
+  "version": "5",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1714955876847,
+      "tag": "0000_early_spitfire",
+      "breakpoints": true
+    }
+  ]
+}
